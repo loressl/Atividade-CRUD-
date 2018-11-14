@@ -1,10 +1,13 @@
 package com.example.maqui.verso3_livro;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import java.util.List;
@@ -16,6 +19,7 @@ import java.util.List;
 public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
 
     private List<Livro> lista;
+    private Context activity;
 
     public Adapter(List<Livro> lista) {
         this.lista = lista;
@@ -32,7 +36,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
-        Livro livro = lista.get( position );
+        final Livro livro = lista.get( position );
 
         holder.titulo.setText( livro.getTitulo() );
         holder.autor.setText( livro.getAutor() );
@@ -50,6 +54,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
         TextView titulo;
         TextView ano;
         TextView autor;
+        Button editar;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -57,6 +62,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
             titulo =(TextView) itemView.findViewById(R.id.titulo);
             ano =(TextView) itemView.findViewById(R.id.ano);
             autor =(TextView) itemView.findViewById(R.id.autor);
+            editar =(Button) itemView.findViewById(R.id.editar);
 
         }
     }

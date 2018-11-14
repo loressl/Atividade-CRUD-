@@ -155,7 +155,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     String ano= object.getString( "ano" ) ;
                     String editora= object.getString( "editora" );
 
-                    livros.add(new Livro( codigo, ISBN, titulo, autor,  ano,editora ) );
+                    livros.add(new Livro( codigo, ISBN, titulo, autor,  ano,editora, MainActivity.this) );
                 }
 
             } catch (JSONException e) {
